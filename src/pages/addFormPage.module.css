@@ -1,0 +1,26 @@
+.form {
+    max-width: 400px;
+    display: grid;
+    gap: 1rem;
+    margin: auto;
+    direction: rtl;
+}
+.radioContainer{
+    display: flex;
+}
+.radioContainer input {
+    margin-left: 1rem;
+}
+.radioContainer label {
+    margin-left: 1rem;
+    color: #555;
+}
+
+.button {
+    all: unset;
+    text-align: center;
+    padding: 0.5rem;
+    color: #fff;
+    border-radius: 0.25rem;
+    background-color: #07f;
+}
