@@ -1,0 +1,14 @@
+.navbar {
+  background-color: #eee;
+  padding: 0.75rem;
+}
+.navbar_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.navbar_list_item {
+  margin-right: 1rem;
+  padding: 0.25rem;
+}
