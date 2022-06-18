@@ -22,7 +22,17 @@ function AddFormPage() {
   function submitFormHandler(event) {
     event.preventDefault();
     console.log(formState);
+    formState &&
+      fetch(`http://${elements.createurl}`, {
+        method: "POST",
+        body: JSON.stringify(formState),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
   }
+
+  console.log(elements.createurl);
 
   function changeInputHandler(name, value) {
     setFormState((perv) => {
@@ -36,13 +46,14 @@ function AddFormPage() {
         {elements?.field?.map((formItems) => {
           if (formItems.type === "radio") {
             return (
-              <div className={styles.radioContainer}>
+              <div className={styles.radioContainer} key={formItems.name}>
                 <label>{formItems.title}</label>
                 <Input
                   label="مرد"
                   id="مرد"
                   name={formItems.name}
                   type={formItems.type}
+                  key={"مرد"}
                   onClick={function (event) {
                     changeInputHandler(formItems.name, "مرد");
                   }}
@@ -52,6 +63,7 @@ function AddFormPage() {
                   id="زن"
                   name={formItems.name}
                   type={formItems.type}
+                  key={"زن"}
                   onClick={function (event) {
                     changeInputHandler(formItems.name, "زن");
                   }}
@@ -61,6 +73,7 @@ function AddFormPage() {
           } else {
             return (
               <Input
+                key={formItems.name}
                 label={formItems.title}
                 name={formItems.name}
                 value={formState ? formState[formItems.name] : ""}
