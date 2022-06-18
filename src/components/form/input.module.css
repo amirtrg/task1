@@ -1,0 +1,32 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  color: #555;
+  margin-bottom: 0.2rem;
+}
+.input {
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  transition: all linear 200ms;
+}
+.input:focus {
+  border-color: #09f;
+  animation: focusInput 500ms ease-in-out forwards;
+}
+input[type="radio"]:focus {
+  animation: none;
+}
+
+@keyframes focusInput {
+  25% {
+    box-shadow: 0 0 0 0 #09f;
+  }
+  75% {
+    box-shadow: 0 0 0 0.25rem #09f1;
+  }
+}
